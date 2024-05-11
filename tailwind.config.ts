@@ -15,6 +15,15 @@ const config: Config = {
     },
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    function ({
+      addVariant,
+    }: {
+      addVariant: (name: string, definition: string) => void;
+    }) {
+      addVariant("child", "& > *");
+      addVariant("child-hover", "& > *:hover");
+    },
+  ],
 };
 export default config;
