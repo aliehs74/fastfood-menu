@@ -1,5 +1,5 @@
 import Image from "next/image";
-import headerBackground from "../public/images/header-background.jpg";
+import headerBackground from "../../public/images/header-background.jpg";
 const Hero = () => {
   return (
     <div className=" w-full mx-auto h-32 relative ">

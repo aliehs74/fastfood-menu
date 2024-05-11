@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Hero from "@/components/Hero";
+import Hero from "@/components/hero/Hero";
 
 export const metadata: Metadata = {
   title: "fastfood menu",
