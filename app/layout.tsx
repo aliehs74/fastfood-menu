@@ -15,10 +15,10 @@ export default function RootLayout({
   return (
     <html lang="fa" dir="rtl">
       <body className="font-danaNormal">
-        <header>
-          <Hero />
-        </header>
-        {children}
+          <header>
+            <Hero />
+          </header>
+          {children}
       </body>
     </html>
   );

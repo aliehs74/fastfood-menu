@@ -1,4 +1,5 @@
 import Category from "@/components/Category/Category";
+import FoodItems from "@/components/FoodItems/FoodItems";
 import SearchBar from "@/components/SearchBar/SearchBar";
 
 export default function Home() {
@@ -11,7 +12,9 @@ export default function Home() {
       </section>
 
       {/* food items */}
-      <section className="py-2 bg-red-200">body</section>
+      <section className="py-2 ">
+        <FoodItems />
+      </section>
     </main>
   );
 }

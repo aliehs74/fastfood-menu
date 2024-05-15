@@ -12,7 +12,7 @@ const Hero = () => {
       <div className="absolute left-[10vw] bottom-16">
         <h1 className="font-morabbaBold text-gray-200 text-3xl uppercase">
           fastfood menu
-        </h1>{" "}
+        </h1>
       </div>
     </div>
   );

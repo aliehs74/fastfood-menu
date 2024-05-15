@@ -1,4 +1,3 @@
-
 import axios from "axios";
 import { useState, useEffect, useCallback } from "react";
 
@@ -19,12 +18,11 @@ const useAxios = (axiosParams: any) => {
     } finally {
       setLoading(false);
     }
-  }, [axiosParams, response]);
+  }, [axiosParams]);
 
   useEffect(() => {
     fetchData();
   }, [axiosParams.url, fetchData]);
-
   return [response, error, loading];
 };
 
