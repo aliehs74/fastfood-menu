@@ -1,26 +1,23 @@
 "use client";
 
 import useAxios from "@/Api/useAxios";
-import { useLayoutEffect, useRef } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import Loading from "../Loading/Loading";
 import SingleItem from "./SingleItem";
 
 const FoodItems = () => {
-  const urlRef = useRef<string>("/FastFood/list");
-
-  useLayoutEffect(() => {
-    const new_url = localStorage.getItem("url");
-    if (new_url) {
-      urlRef.current = new_url;
-    }
-  }, [urlRef]);
+  const [url, setUrl] = useState("/FastFood/list");
+  const new_url = localStorage.getItem("url");
 
   const [fetchFoodItems, , loading] = useAxios({
-    url: urlRef.current,
+    url,
   });
-  console.log(fetchFoodItems);
 
-  let delay = 0.1;
+  useEffect(() => {
+    if (url !== new_url && new_url !== null) {
+      setUrl(new_url);
+    }
+  }, [url, new_url]);
 
   if (loading) {
     return <Loading />;
@@ -28,13 +25,9 @@ const FoodItems = () => {
     return (
       <div className="grid grid-cols-3 gap-4">
         {fetchFoodItems.map((item) => {
-          delay += 0.03;
           return (
-            <div
-              
-              key={item.id}
-            >
-              <SingleItem {...item} delay={delay} />
+            <div key={item.id}>
+              <SingleItem {...item} />
             </div>
           );
         })}

@@ -1,5 +1,15 @@
 import React from "react";
 const SearchBar = () => {
+  const baseURL = "/FastFood/search/";
+  let queryString: string;
+
+  const handleChange = () => {
+    if (queryString.length !== 0) {
+      localStorage.setItem("url", `${baseURL}?term=${queryString}`);
+    } else {
+      localStorage.setItem("url", "/FastFood/list");
+    }
+  };
 
   return (
     <form className="w-1/4 mx-auto h-10">
@@ -33,6 +43,10 @@ const SearchBar = () => {
           className="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:border-emerald-500 dark:bg-gray-300 dark:border-gray-400 dark:placeholder-gray-400 dark:focus:ring-emerald-500 dark:focus:border-emerald-500 h-10"
           placeholder="جستجو کنید..."
           required
+          onChange={(e) => {
+            queryString = e.target.value;
+            handleChange();
+          }}
         />
       </div>
     </form>
