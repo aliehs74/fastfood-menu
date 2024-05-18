@@ -1,10 +1,9 @@
 import Image from "next/image";
-import headerBackground from "../../public/images/header-background.jpg";
 const Hero = () => {
   return (
     <div className=" w-full mx-auto h-32 relative ">
       <Image
-        src={headerBackground}
+        src="/images/header-background.jpg"
         fill={true}
         alt="header background picture"
         objectFit="cover"

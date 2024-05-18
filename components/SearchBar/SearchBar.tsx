@@ -1,4 +1,6 @@
+"use client";
 import React from "react";
+
 const SearchBar = () => {
   const baseURL = "/FastFood/search/";
   let queryString: string;

@@ -3,6 +3,7 @@ import FoodItems from "@/components/FoodItems/FoodItems";
 import SearchBar from "@/components/SearchBar/SearchBar";
 
 export default function Home() {
+  
   return (
     <main className="container w-[80vw] min-h-screen bg-zinc-50 mx-auto rounded-md -mt-10 z-10 relative px-5 ">
       {/* CategoryList and search */}
